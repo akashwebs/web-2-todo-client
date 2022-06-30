@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Shared/Header';
+import Home from './Pages/Home';
+import Todo from './Pages/Todo';
+import CompletedTasks from './Pages/CompletedTasks';
 
 function App() {
   return (
@@ -9,7 +12,9 @@ function App() {
 
       <Header></Header>
       <Routes>
-        <Route></Route>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/todo' element={<Todo></Todo>}></Route>
+        <Route path='/completedtasks' element={<CompletedTasks></CompletedTasks>}></Route>
       </Routes>
     
     </div>
