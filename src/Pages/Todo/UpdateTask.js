@@ -9,7 +9,7 @@ const UpdateTask = ({task,refetch}) => {
         const newTaskName=e.target.taskName.value;
         if(newTaskName){
             
-            const url=`http://localhost:5000/updateTask/${task._id}`
+            const url=`https://arcane-gorge-26682.herokuapp.com/updateTask/${task._id}`
             fetch(url,{
                 method:"PUT",
                 headers:{

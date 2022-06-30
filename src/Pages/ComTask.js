@@ -10,7 +10,7 @@ const ComTask = ({comTask, refetch}) => {
         
         if(id){
             
-            const url=`http://localhost:5000/updateTask/${id}`
+            const url=`https://arcane-gorge-26682.herokuapp.com/updateTask/${id}`
             fetch(url,{
                 method:"PUT",
                 headers:{
@@ -39,7 +39,7 @@ const ComTask = ({comTask, refetch}) => {
           .then((willDelete) => {
             if (willDelete) {
                 if(delteTask._id){
-                    fetch(`http://localhost:5000/deleteTask/${delteTask._id}`,{
+                    fetch(`https://arcane-gorge-26682.herokuapp.com/deleteTask/${delteTask._id}`,{
                         method:'DELETE',
                         headers:{
                             'content-type':'application/json'

@@ -8,7 +8,7 @@ import Loading from './Loading';
 const Home = () => {
    
     
-    const {data: task, isLoading, refetch}=useQuery('loadTask',()=>fetch('http://localhost:5000/task').then(res=>res.json()))
+    const {data: task, isLoading, refetch}=useQuery('loadTask',()=>fetch('https://arcane-gorge-26682.herokuapp.com/task').then(res=>res.json()))
 
     const handleTask = (e) => {
         e.preventDefault()
@@ -16,7 +16,7 @@ const Home = () => {
         if(taskValue.length>0){
             const tasks={taskName:taskValue, isCompelete:false}
             
-            fetch('http://localhost:5000/addTask',{
+            fetch('https://arcane-gorge-26682.herokuapp.com/addTask',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'
@@ -26,6 +26,7 @@ const Home = () => {
             .then(data=>{
                 if(data.insertedId){
                     refetch()
+                    e.target.task.value=''
                     swal("Successfully Task Added", "", "success");
                 }
             })
@@ -44,7 +45,7 @@ const Home = () => {
         
         if(id){
             
-            const url=`http://localhost:5000/updateTask/${id}`
+            const url=`https://arcane-gorge-26682.herokuapp.com/updateTask/${id}`
             fetch(url,{
                 method:"PUT",
                 headers:{
@@ -65,7 +66,7 @@ const Home = () => {
     return (
         <div>
             <div className='flex items-center mt-12 flex-col'>
-                <h3 className='text-3xl uppercase mb-2'>Add Task</h3>
+                <h3 className='text-3xl uppercase font-extrabold mb-2'>Add Task</h3>
                 <div class="form-control w-full md:w-1/2">
                     <form  onSubmit={handleTask} class="input-group ">
                         <input type="text" name='task' placeholder="Write your task" class="input w-full text-2xl focus:outline-0 input-bordered" />
@@ -76,7 +77,7 @@ const Home = () => {
                 </div>
             </div>
             <div className='px-2 md:px-16'>
-                <h2 className='text-3xl my-3 font-semibold'>My ToDo</h2>
+                <h2 className='text-3xl my-3 font-extrabold'>My ToDo</h2>
                 <hr className='h-2' />
                 <div>
                     <div class="overflow-x-auto">

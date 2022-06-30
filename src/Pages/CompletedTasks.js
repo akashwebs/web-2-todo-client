@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 const CompletedTasks = () => {
 
-    const {data:completedTasks, isLoading, refetch}=useQuery('completedTask',()=>fetch('http://localhost:5000/compeltetask').then(res=>res.json()))
+    const {data:completedTasks, isLoading, refetch}=useQuery('completedTask',()=>fetch('https://arcane-gorge-26682.herokuapp.com/compeltetask').then(res=>res.json()))
     
 
     if(isLoading){return <Loading></Loading>}
@@ -13,7 +13,7 @@ const CompletedTasks = () => {
     
     return (
         <div className='md:px-16 px-2'>
-            <h2 className='text-5xl mt-8 mb-3 font-extrabold'>Completed Tasks</h2>
+            <h2 className='text-4xl md:text-5xl mt-8 mb-3 font-extrabold'>Completed Tasks</h2>
             <hr />
 
             <div class="overflow-x-auto">
