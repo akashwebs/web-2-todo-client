@@ -33,6 +33,7 @@ const UpdateTask = ({task,refetch}) => {
            <input type="checkbox" id="update-task" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <form onSubmit={handleUpdate} class="modal-box">
+            <label for="update-task" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 class="font-extrabold text-3xl mb-3">Update Task</h3>
                     <input name='taskName' type="text" defaultValue={task.taskName} class="input input-bordered w-full max-w-xs" />
                     <div class="mt-3">
