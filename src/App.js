@@ -3,8 +3,9 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Shared/Header';
 import Home from './Pages/Home';
-import Todo from './Pages/Todo';
+
 import CompletedTasks from './Pages/CompletedTasks';
+import Todo from './Pages/Todo/Todo';
 
 function App() {
   return (

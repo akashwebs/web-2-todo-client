@@ -3,13 +3,13 @@ import swal from 'sweetalert';
 import add from '../Assets/add.png'
 import { useQuery } from 'react-query';
 import Loading from './Loading';
-import { success } from 'daisyui/src/colors';
+
 
 const Home = () => {
    
-    const [isCompelete,setIsCompelete]=useState(false)
     
     const {data: task, isLoading, refetch}=useQuery('loadTask',()=>fetch('http://localhost:5000/task').then(res=>res.json()))
+
     const handleTask = (e) => {
         e.preventDefault()
         const taskValue = e.target.task.value;
@@ -43,7 +43,7 @@ const Home = () => {
     const handleCompelete=(id)=>{
         
         if(id){
-            setIsCompelete(id)
+            
             const url=`http://localhost:5000/updateTask/${id}`
             fetch(url,{
                 method:"PUT",
@@ -91,7 +91,7 @@ const Home = () => {
 
                                 {
                                     task?.map(t=>{
-                                        return  <tr className='flex items-center py-3 gap-2'>
+                                        return  <tr className='flex items-center py-2 shadow-md my-2 gap-2'>
                                         <input type="checkbox" onClick={()=>handleCompelete(t._id)} class="checkbox" /> {t.taskName}
                                     </tr>
                                     })
