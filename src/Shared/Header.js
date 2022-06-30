@@ -1,14 +1,19 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 
+
 const Header = () => {
+ 
+  
     const menu = <>
 
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/completedtasks'>Completed Tasks</Link></li>
-        <li><Link to='/todo'>To-Do</Link></li>
-        <li><Link to='/calendar'>Calendar</Link></li>
+        <li><Link className='shadow md:mr-3' to='/'>Home</Link></li>
+        <li><Link className='shadow md:mr-3' to='/completedtasks'>Completed Tasks</Link></li>
+        <li><Link className='shadow md:mr-3' to='/todo'>To-Do</Link></li>
+        <li><Link className='shadow md:mr-3' to='/calendar'>Calendar</Link></li>
+        
 
     </>
 

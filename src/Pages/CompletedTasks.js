@@ -4,7 +4,9 @@ import { useQuery } from 'react-query';
 import Loading from './Loading';
 
 const CompletedTasks = () => {
+
     const {data:completedTasks, isLoading, refetch}=useQuery('completedTask',()=>fetch('http://localhost:5000/compeltetask').then(res=>res.json()))
+    
 
     if(isLoading){return <Loading></Loading>}
     
