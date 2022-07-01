@@ -12,7 +12,7 @@ const Calendars = () => {
 const [events, setEvents]=useState([])
  const [reFeach, setRefetch]=useState(true)
   useEffect(()=>{
-    fetch(`https://arcane-gorge-26682.herokuapp.com/${dataFormat}`)
+    fetch(`https://arcane-gorge-26682.herokuapp.com/events/${dataFormat}`)
     .then(res=>res.json())
     .then(data=>{
       if(data){
