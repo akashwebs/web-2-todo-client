@@ -16,8 +16,8 @@ const Todo = () => {
             <h2 className='text-4xl md:text-5xl mt-8 mb-3 font-extrabold'>Todo</h2>
             <hr />
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

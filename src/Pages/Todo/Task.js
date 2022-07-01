@@ -66,7 +66,7 @@ const Task = ({ task, refetch,setUpdateId }) => {
     return (
         <tr>
             <td className=''>
-                <input type="checkbox" style={{position:'relative', top:'7px'}} onClick={() => handleCompelete(task._id)} class="checkbox mr-3" />
+                <input type="checkbox" style={{position:'relative', top:'7px'}} onClick={() => handleCompelete(task._id)} className="checkbox mr-3" />
                 {task.taskName}
             </td>
 

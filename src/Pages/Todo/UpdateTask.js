@@ -30,14 +30,14 @@ const UpdateTask = ({task,refetch}) => {
     
     return (
         <div>
-           <input type="checkbox" id="update-task" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <form onSubmit={handleUpdate} class="modal-box">
-            <label for="update-task" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="font-extrabold text-3xl mb-3">Update Task</h3>
-                    <input name='taskName' type="text" defaultValue={task.taskName} class="input input-bordered w-full max-w-xs" />
-                    <div class="mt-3">
-                        <button type='submit'><label for="update-task" class="btn border-0 hover:btn-success bg-[#F44336] text-white">Update Now</label></button>
+           <input type="checkbox" id="update-task" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <form onSubmit={handleUpdate} className="modal-box">
+            <label for="update-task" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="font-extrabold text-3xl mb-3">Update Task</h3>
+                    <input name='taskName' type="text" defaultValue={task.taskName} className="input input-bordered w-full max-w-xs" />
+                    <div className="mt-3">
+                        <button type='submit'><label for="update-task" className="btn border-0 hover:btn-success bg-[#F44336] text-white">Update Now</label></button>
                     </div>
                 </form>
             </div>

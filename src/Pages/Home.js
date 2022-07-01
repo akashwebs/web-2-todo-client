@@ -67,10 +67,10 @@ const Home = () => {
         <div>
             <div className='flex items-center mt-12 flex-col'>
                 <h3 className='text-3xl uppercase font-extrabold mb-2'>Add Task</h3>
-                <div class="form-control w-full md:w-1/2">
-                    <form  onSubmit={handleTask} class="input-group ">
-                        <input type="text" name='task' placeholder="Write your task" class="input w-full text-2xl focus:outline-0 input-bordered" />
-                        <button type='submit' class="btn btn-square input-bordered bg-white hover:bg-[#F44336] hover:input-bordered">
+                <div className="form-control w-full md:w-1/2">
+                    <form  onSubmit={handleTask} className="input-group ">
+                        <input type="text" name='task' placeholder="Write your task" className="input w-full text-2xl focus:outline-0 input-bordered" />
+                        <button type='submit' className="btn btn-square input-bordered bg-white hover:bg-[#F44336] hover:input-bordered">
                             <img src={add} className='w-10 h-10' alt="" />
                         </button>
                     </form>
@@ -80,8 +80,8 @@ const Home = () => {
                 <h2 className='text-3xl my-3 font-extrabold'>My ToDo</h2>
                 <hr className='h-2' />
                 <div>
-                    <div class="overflow-x-auto">
-                        <table class="table w-full">
+                    <div className="overflow-x-auto">
+                        <table className="table w-full">
 
                             <thead>
                                 <tr>
@@ -92,8 +92,8 @@ const Home = () => {
 
                                 {
                                     task?.map(t=>{
-                                        return  <tr className='flex items-center py-2 shadow-md my-2 gap-2'>
-                                        <input type="checkbox" onClick={()=>handleCompelete(t._id)} class="checkbox" /> {t.taskName}
+                                        return  <tr key={t._id} >
+                                        <td className='flex items-center py-2 shadow-md my-2 gap-2'><input type="checkbox" onClick={()=>handleCompelete(t._id)} className="checkbox" /> {t.taskName}</td>
                                     </tr>
                                     })
                                 }
