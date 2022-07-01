@@ -12,7 +12,7 @@ const Calendars = () => {
 const [events, setEvents]=useState([])
  const [reFeach, setRefetch]=useState(true)
   useEffect(()=>{
-    fetch(`http://localhost:5000/events/${dataFormat}`)
+    fetch(` https://arcane-gorge-26682.herokuapp.com/${dataFormat}`)
     .then(res=>res.json())
     .then(data=>{
       if(data){
@@ -28,7 +28,7 @@ console.log(events)
     if(taskValue.length>0){
         const tasks={taskName:taskValue, isCompelete:false, date:dataFormat}
         
-        fetch('http://localhost:5000/events',{
+        fetch(' https://arcane-gorge-26682.herokuapp.com/events',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
